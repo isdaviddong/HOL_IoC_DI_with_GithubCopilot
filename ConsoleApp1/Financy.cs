@@ -6,18 +6,6 @@ namespace ConsoleApp1
 {
     public class Financy
     {
-
-        private readonly CurrencyConverter _currencyConverter;
-
-        public Financy(CurrencyConverter currencyConverter)
-        {
-            _currencyConverter = currencyConverter;
-        }
-
-        public Financy() : this(new CurrencyConverter())
-        {
-        }
-
         public double USD2TWD(double amount)
         {
             var currencyConverter = new CurrencyConverter();
@@ -27,7 +15,7 @@ namespace ConsoleApp1
 
         public double SplitMoney(double USDAmount, int People)
         {
-            var currencyConverter = _currencyConverter;
+            var currencyConverter = new CurrencyConverter();
             //使用到外部函式(抓取匯率)
             double rate = currencyConverter.Convert("USD", "TWD");
             //計算台幣總金額
